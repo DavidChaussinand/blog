@@ -6,20 +6,24 @@ error_reporting(E_ALL);
 
 
 
-$pagefilter = filter_input(INPUT_GET, 'action', FILTER_SANITIZE_URL);
+$action = filter_input(INPUT_GET, 'action', FILTER_SANITIZE_URL);
 
 $routes = [
-    '' => 'pages/accueil.php',
-    'contact' => 'pages/contact.php',
-    'hobby' => 'pages/hobby.php'
+    '' => 'ressources/views/layouts/accueil.php',
+    '/' => 'ressources/views/layouts/accueil.php',
+    'contact' => 'ressources/views/layouts/contact.php',   //  pour aller chercher la page dans url ?action=contact
+
 ];
 
 
-if (isset($routes[$pagefilter])) {
-    require $routes[$pagefilter];
-} else {
-    echo "ErrorDocument 404";
+if (!array_key_exists($action, $routes)){
+    header("HTTP/1.0 404 Not Found");
+    require ('ressources/views/errors/404.php');
+} else{
+    require $routes[$action];
+    
 }
 
 
 ?>
+
