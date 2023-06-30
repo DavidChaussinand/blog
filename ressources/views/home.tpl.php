@@ -1,8 +1,5 @@
 <?php
 include 'header.tpl.php';
-
-$articles = lastBlogPosts($pdo);
-
 ?>
 
 
