@@ -1,9 +1,12 @@
 <?php
-function lastBlogPosts()
-    {
-        $database = [];
 
-        return $database;
+
+function lastBlogPosts(PDO $p do)
+    {   
+
+        $article = [];
+
+        return $article;
     }
 
 ?>
