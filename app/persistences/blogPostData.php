@@ -1,12 +1,22 @@
 <?php
 
 
-function lastBlogPosts(PDO $ pdo)
+function lastBlogPosts(PDO $pdo)
     {   
 
-        $article = [];
+        $articles = [];
 
-        return $article;
-    }
+
+        // $last10Articles = 'SELECT * FROM articles ORDER BY id DESC LIMIT 10';
+        // $recipesStatement = $pdo->prepare($last10Articles);
+        // $recipesStatement->execute();
+
+        // $articles = $recipesStatement->fetchAll();
+        
+        return $articles;
+        
+
+    
+}
 
 ?>
