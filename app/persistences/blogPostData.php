@@ -1,7 +1,7 @@
 <?php
 
 
-function lastBlogPosts(PDO $p do)
+function lastBlogPosts(PDO $ pdo)
     {   
 
         $article = [];
