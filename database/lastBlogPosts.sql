@@ -1,5 +1,5 @@
 SELECT articles.* , users.name 
 FROM articles 
-JOIN users ON articles.Users_id = users.id 
-ORDER BY articles.id DESC 
+INNER JOIN users ON articles.Users_id = users.id 
+ORDER BY articles.first_date DESC 
 LIMIT 10;
