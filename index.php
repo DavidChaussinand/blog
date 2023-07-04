@@ -13,6 +13,7 @@ $routes = [
     'contact' => 'ressources/views/layouts/contact.php',   //  pour aller chercher la page dans url ?action=contact
     'blogpost'=> 'app/controllers/blogPostController.php',
     'createpost' => 'app/controllers/blogPostCreateController.php',
+    'blogPostModifyController' => 'app/controllers/blogPostModifyController.php',
 ];
 
 ob_start(); //commence la mise en tampon de sortie

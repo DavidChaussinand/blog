@@ -4,6 +4,8 @@ include 'layouts/header.tpl.php';
 ?>
 
     <a href="?action=createpost">Créer un article</a>
+    <a href="?action=blogPostModifyController">modification de l'article</a>
+
 <br>
 <?php if (empty($articles)) :?>
     <p> il n'y a pas d'article dans cette page </p>
