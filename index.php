@@ -1,7 +1,7 @@
 <?php
-// ini_set('display_errors', 1);
-// ini_set('display_startup_errors', 1);
-// error_reporting(E_ALL);
+ ini_set('display_errors', 1);
+ ini_set('display_startup_errors', 1);
+ error_reporting(E_ALL);
 
 require 'config/database.php';
 
@@ -11,7 +11,8 @@ $action = filter_input(INPUT_GET, 'action', FILTER_SANITIZE_URL);
 $routes = [
     '' => 'app/controllers/homeController.php',
     'contact' => 'ressources/views/layouts/contact.php',   //  pour aller chercher la page dans url ?action=contact
-
+    'blogpost'=> 'app/controllers/blogPostController.php',
+    'createpost' => 'app/controllers/blogPostCreateController.php',
 ];
 
 ob_start(); //commence la mise en tampon de sortie

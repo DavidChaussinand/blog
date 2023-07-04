@@ -1,20 +1,21 @@
 <?php
-include 'header.tpl.php';
+include 'layouts/header.tpl.php';
+
 ?>
 
-
-    
+    <a href="?action=createpost">Créer un article</a>
+<br>
 <?php if (empty($articles)) :?>
-    <p> il n'y a pas d'article dans cette page <?= $article['title']; ?></p>  
+    <p> il n'y a pas d'article dans cette page </p>
 <?php else : ?>
     <?php foreach ($articles as $article ) { ?> 
         <articles>
+
             <h3> <?= $article['title']; ?></h3>
             <p> <?= $article['text']; ?></p>
             <p> <?= $article['first_date']; ?></p>
             <p> <?= $article['name']; ?></p>
-            <br>
-            <br>
+             <a href="?action=blogpost&id=<?=$article['id']?>">afficher l'article</a>
         </article>
     <?php } ?>
 <?php endif; ?>    
@@ -24,5 +25,5 @@ include 'header.tpl.php';
 
 
 <?php
-include 'footer.tpl.php';
+include 'layouts/footer.tpl.php';
 ?>

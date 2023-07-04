@@ -1,8 +1,8 @@
 <?php
 
 
-$user= 'blog';
-$password ='blog';
+$user= 'test';
+$password ='test';
 
 $pdo = new PDO('mysql:host=localhost;dbname=blog;charset=utf8', $user, $password);
 $stmt = $pdo->prepare('SELECT name FROM users WHERE id = :id');
