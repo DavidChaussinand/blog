@@ -63,4 +63,34 @@ function blogPostCreate(PDO $pdo , $text, $priority, $title, $first_date, $last_
 
 
 }
+
+function blogPostUpdate(PDO $pdo, $id,$text, $priority, $title, $first_date, $last_date, $users_id) {
+
+    $sql = file_get_contents('database/modifyPost.sql');
+    $recipesStatement = $pdo->prepare($sql);
+    $recipesStatement->bindValue(':id', $id, PDO::PARAM_INT);
+    $recipesStatement->bindValue(':text', $text);
+    $recipesStatement->bindValue(':priority', $priority, PDO::PARAM_INT);
+    $recipesStatement->bindValue(':title', $title, PDO::PARAM_STR);
+    $recipesStatement->bindValue(':first_date', $first_date);
+    $recipesStatement->bindValue(':last_date', $last_date);
+    $recipesStatement->bindValue(':users_id', $users_id, PDO::PARAM_INT);
+    $modify = $recipesStatement->execute();
+
+    if(isset($_POST['envoyer'])){
+        if ($modify){
+            echo" la modification a été effectué"; ?>
+            <br><br>
+            <a href='/' >retour à la page accueil</a>
+            <br><br><br>
+            <?php
+        } else{
+            echo"l'article n'a pas été créer";
+        }
+    }
+
+
+}
+
+
 ?>

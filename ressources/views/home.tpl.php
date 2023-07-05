@@ -4,7 +4,7 @@ include 'layouts/header.tpl.php';
 ?>
 
     <a href="?action=createpost">Créer un article</a>
-    <a href="?action=blogPostModifyController">modification de l'article</a>
+
 
 <br>
 <?php if (empty($articles)) :?>
@@ -17,7 +17,9 @@ include 'layouts/header.tpl.php';
             <p> <?= $article['text']; ?></p>
             <p> <?= $article['first_date']; ?></p>
             <p> <?= $article['name']; ?></p>
-             <a href="?action=blogpost&id=<?=$article['id']?>">afficher l'article</a>
+            <a href="?action=blogpost&id=<?=$article['id']?>">afficher l'article</a>
+        <br>
+            <a href="?action=blogPostModify&id=<?=$article['id']?>">modification de l'article</a>
         </article>
     <?php } ?>
 <?php endif; ?>    
