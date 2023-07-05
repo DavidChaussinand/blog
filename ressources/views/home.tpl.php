@@ -3,6 +3,8 @@ include 'layouts/header.tpl.php';
 
 ?>
 
+    <h2> <?= $suppression ?? '' ?> </h2>
+
     <a href="?action=createpost">Créer un article</a>
 
 
@@ -20,6 +22,8 @@ include 'layouts/header.tpl.php';
             <a href="?action=blogpost&id=<?=$article['id']?>">afficher l'article</a>
         <br>
             <a href="?action=blogPostModify&id=<?=$article['id']?>">modification de l'article</a>
+        <br><br>
+            <a href="?action=blogPostDelete&id=<?=$article['id']?>">suppression de l'article : <?= $article['title']; ?></a>
         </article>
     <?php } ?>
 <?php endif; ?>    

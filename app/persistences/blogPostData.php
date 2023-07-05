@@ -22,6 +22,20 @@ function blogPostById(PDO $pdo ,int $id) : array
 
     }
 
+function blogPostDelete(PDO $pdo, int $id) : void {
+    $sqlDeleteComment = file_get_contents('database/deleteComment.sql');
+    $recipesStatementDeleteComment = $pdo ->prepare($sqlDeleteComment);
+    $recipesStatementDeleteComment->bindValue(':id', $id,PDO::PARAM_INT);
+    $recipesStatementDeleteComment->execute();
+
+    $sqlDeletePost = file_get_contents('database/deletePost.sql');
+    $recipesStatementDeletePost = $pdo ->prepare($sqlDeletePost);
+    $recipesStatementDeletePost->bindValue(':id', $id,PDO::PARAM_INT);
+    $recipesStatementDeletePost->execute();
+
+
+}
+
 function CommentsByBlogPost(PDO $pdo ,int $id): array {
 
     $sql = file_get_contents('database/commentsBlogPost.sql');
@@ -46,21 +60,7 @@ function blogPostCreate(PDO $pdo , $text, $priority, $title, $first_date, $last_
     $recipesStatement->bindValue(':first_date' , $first_date );
     $recipesStatement->bindValue(':last_date' , $last_date  );
     $recipesStatement->bindValue(':users_id' , $users_id , PDO::PARAM_INT);
-    $addArticle = $recipesStatement->execute();
-
-
-    if(isset($_POST['envoyer'])){
-        if ($addArticle){
-            echo" l'article a été crée"; ?>
-            <br><br>
-            <a href='/' >retour à la page accueil</a>
-            <br><br><br>
-            <?php
-        } else{
-            echo"l'article n'a pas été créer";
-        }
-    }
-
+    $recipesStatement->execute();
 
 }
 
@@ -75,22 +75,11 @@ function blogPostUpdate(PDO $pdo, $id,$text, $priority, $title, $first_date, $la
     $recipesStatement->bindValue(':first_date', $first_date);
     $recipesStatement->bindValue(':last_date', $last_date);
     $recipesStatement->bindValue(':users_id', $users_id, PDO::PARAM_INT);
-    $modify = $recipesStatement->execute();
-
-    if(isset($_POST['envoyer'])){
-        if ($modify){
-            echo" la modification a été effectué"; ?>
-            <br><br>
-            <a href='/' >retour à la page accueil</a>
-            <br><br><br>
-            <?php
-        } else{
-            echo"l'article n'a pas été créer";
-        }
-    }
+    $recipesStatement->execute();
 
 
 }
+
 
 
 ?>

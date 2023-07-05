@@ -1,11 +1,8 @@
 <?php
-echo "voici la page de modification d'article";
+echo "voici la page de suppresion";
 ?>
 
-
-<h1> Modification d'un article</h1>
-
-<h3> <?= $message ?? '' ?> </h3>
+<h1> supprimer un article</h1>
 
 <form action="" method="post" >
     <div class="form-example">
@@ -39,10 +36,12 @@ echo "voici la page de modification d'article";
     </div>
 
     <div >
-        <button type="submit"  name="envoyer">Envoyer</button>
+        <button type="submit"  name="delete">Supprimer</button>
     </div>
 </form>
 
 
-<a href='/'>retour à la page accueil</a>
 
+
+<br><br>
+<a href='/'>retour à la page accueil</a>

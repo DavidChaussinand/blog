@@ -5,12 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="908ef73d-605b-46b1-9024-32ba0fd8b0c3" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/blogPostCreateController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/blogPostCreateController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/blogPostModifyController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/blogPostModifyController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/persistences/blogPostData.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/persistences/blogPostData.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ressources/views/blogPost.tpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/ressources/views/blogPost.tpl.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ressources/views/blogPostModify.tpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/ressources/views/blogPostModify.tpl.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ressources/views/createPost.tpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/ressources/views/createPost.tpl.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ressources/views/home.tpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/ressources/views/home.tpl.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ressources/views/layouts/header.tpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/ressources/views/layouts/header.tpl.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,7 +71,7 @@
       <workItem from="1688394655925" duration="30000" />
       <workItem from="1688452344476" duration="925000" />
       <workItem from="1688453270581" duration="22000000" />
-      <workItem from="1688538930673" duration="995000" />
+      <workItem from="1688538930673" duration="17690000" />
     </task>
     <servers />
   </component>

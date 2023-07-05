@@ -1,5 +1,7 @@
 
-   <articles>
+
+
+<articles>
 
             <h3> <?=$article['title']; ?></h3>
             <p> <?= $article['text']; ?></p>

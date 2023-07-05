@@ -5,7 +5,13 @@ echo "voici la page de création d'article";
 
 
 ?>
-<h1> Création d'un article</h1>
+
+
+<h1> Création d"un article</h1>
+
+
+<h3> <?= $message ?? '' ?> </h3>
+
 
 <form action="" method="post" >
 
@@ -30,7 +36,7 @@ echo "voici la page de création d'article";
             <input type="datetime-local" name="last_date" id="last_date" required>
         </div>
         <div class="form-example">
-            <label for="Users_id">le dégré d'importance de l'article: </label>
+            <label for="Users_id">l'index de l'auteur: </label>
             <input type="number" name="Users_id" id="Users_id" required>
         </div>
 
