@@ -52,10 +52,25 @@ echo "voici la page de création d'article";
         <p><?= $emptyUsers_id ?? ''?></p>
         <div class="form-example">
             <label for="Users_id">l'index de l'auteur: </label>
-            <input type="number" name="Users_id" id="Users_id" value="<?= $_POST['Users_id'] ?? '' ?>">
+            <select name="Users_id"" id="Users_id"" value="<?= $_POST['Users_id"'] ?? '' ?>">
+            <?php foreach ($authors as $author ) { ?>
+                <option value=" <?= $author['id']?>" selected ><?= $author['id']?> (<?= $author['user_name']?>) </option>
+            <?php } ?>
+            </select>
         </div>
 
-        <div >
+        <div>
+            <a href="?action=createAuthor">Créer un auteur</a>
+
+        </div>
+<!--                <option value="1" selected>1 (matéo)</option>-->
+<!--                <option value="2" >2 (Valentine)</option>-->
+<!--                <option value="3">3 (Johnny)</option>-->
+<!--                <option value="4">4 (Dadou-26)</option>-->
+<!--                <option value="5">5 (hilalex07) </option>-->
+
+        <br> <br>
+        <div>
             <button type="submit"  name="envoyer">Envoyer</button>
         </div>
 </form>

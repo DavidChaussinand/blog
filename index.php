@@ -13,6 +13,7 @@ $routes = [
     'contact' => 'ressources/views/layouts/contact.php',   //  pour aller chercher la page dans url ?action=contact
     'blogpost'=> 'app/controllers/blogPostController.php',
     'createpost' => 'app/controllers/blogPostCreateController.php',
+    'createAuthor' => 'app/controllers/createAuthorController.php',
     'blogPostModify' => 'app/controllers/blogPostModifyController.php',
     'blogPostDelete' => 'app/controllers/blogPostDeleteController.php',
 ];

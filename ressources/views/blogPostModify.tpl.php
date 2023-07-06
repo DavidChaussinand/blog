@@ -34,8 +34,12 @@ echo "voici la page de modification d'article";
         <input type="datetime-local" name="last_date" id="last_date" value="<?=$article['last_date']?>" required>
     </div>
     <div class="form-example">
-        <label for="Users_id">l'index de l'auteur': </label>
-        <input type="number" name="Users_id" id="Users_id" value="<?=$article['Users_id']?>" required>
+        <label for="Users_id">l'index de l'auteur: </label>
+        <select name="Users_id"" id="Users_id"" value="<?= $_POST['Users_id"'] ?? '' ?>">
+        <?php foreach ($authors as $author ) { ?>
+            <option value=" <?= $author['id']?>" selected ><?= $author['id']?> (<?= $author['user_name']?>) </option>
+        <?php } ?>
+        </select>
     </div>
 
     <div >

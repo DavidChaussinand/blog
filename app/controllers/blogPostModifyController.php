@@ -2,11 +2,7 @@
 
 require 'app/persistences/blogPostData.php';
 
-
-
-
-
-
+$authors = authorsByBlogPost($pdo);
 $article = blogPostById($pdo, $_GET['id']);
 
 if (!empty ($_POST)) {

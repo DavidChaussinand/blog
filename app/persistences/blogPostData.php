@@ -11,6 +11,15 @@ function lastBlogPosts(PDO $pdo) :array
         return $articles;
     }
 
+function authorsByBlogPost(PDO $pdo): array
+    {
+        $sql = file_get_contents('database/authorsBlogPost.sql');
+        $recipesStatement = $pdo->prepare($sql);
+        $recipesStatement->execute();
+        $authors = $recipesStatement->fetchAll();
+        return  $authors;
+    }
+
 function blogPostById(PDO $pdo ,int $id) : array
     {
         $sql = file_get_contents('database/blogPost.sql');
@@ -41,7 +50,7 @@ function blogPostDelete(PDO $pdo, int $id) : void {
 
 }
 
-function CommentsByBlogPost(PDO $pdo ,int $id): array {
+function commentsByBlogPost(PDO $pdo ,int $id): array {
 
     $sql = file_get_contents('database/commentsBlogPost.sql');
     $recipesStatement = $pdo->prepare($sql);
@@ -52,7 +61,6 @@ function CommentsByBlogPost(PDO $pdo ,int $id): array {
 }
 
 function blogPostCreate(PDO $pdo , $text, $priority, $title, $first_date, $last_date, $users_id){
-
 
     // $sql= 'INSERT INTO articles VALUES (NULL,:text, :priority, :title, :first_date, :last_date, :users_id)';
     // valeur NULL dans le tableau VALUES car avec cette méthode il faut une valeur par colonne de ma table.
@@ -68,6 +76,17 @@ function blogPostCreate(PDO $pdo , $text, $priority, $title, $first_date, $last_
     $recipesStatement->execute();
 
 }
+function createAuthor(PDO $pdo, $name, $nickname, $username){
+    $sql = file_get_contents('database/createAuthor.sql');
+    $recipesStatement = $pdo->prepare($sql);
+    $recipesStatement->bindValue(':name' , $name , PDO::PARAM_STR);
+    $recipesStatement->bindValue(':nickname' , $nickname , PDO::PARAM_STR);
+    $recipesStatement->bindValue(':username' , $username , PDO::PARAM_STR);
+    $recipesStatement->execute();
+
+}
+
+
 
 function blogPostUpdate(PDO $pdo, $id,$text, $priority, $title, $first_date, $last_date, $users_id) {
 

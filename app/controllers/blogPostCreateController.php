@@ -1,7 +1,7 @@
 <?php
 
 require 'app/persistences/blogPostData.php';
-
+$authors = authorsByBlogPost($pdo);
 
 $mesFiltres=[
     'id'=> FILTER_SANITIZE_NUMBER_INT,
@@ -11,6 +11,7 @@ $mesFiltres=[
     'Users_id'=> FILTER_SANITIZE_NUMBER_INT,
 ];
 $mesInput = filter_input_array(INPUT_POST,$mesFiltres);
+
 $text = $mesInput['text'] ?? "" ;
 $title = $mesInput['title']?? "";
 
@@ -25,6 +26,10 @@ if (!empty ($_POST)) {
         $emptyText =" le contenu du text est vide , merci de le remplir";
         $error = true;
     }
+    if (strlen($text) > 150) {
+        $emptyText = " le contenu de l'article est trop long, merci de ne pas dépasser 150 caractères";
+        $error = true;
+    }
 
     $priority = $_POST['priority'];
 
@@ -33,6 +38,10 @@ if (!empty ($_POST)) {
     $title = $_POST['title'];
     if (empty($title)) {
         $emptyTitle =" le contenu du titre est vide , merci de le remplir";
+        $error = true;
+    }
+    if (strlen($title) > 50) {
+        $emptyTitle = " le contenu du titre est trop long, merci de ne pas dépasser 50 caractères";
         $error = true;
     }
 
@@ -56,9 +65,10 @@ if (!empty ($_POST)) {
         $error = true;
     }
 
+
     if (!$error) {
         blogPostCreate($pdo, $text, $priority, $title, $first_date, $last_date, $users_id);
-        $message = "l'article a a été crée dans la bdd";
+        $message = "l'article  $title a a été crée dans la bdd";
     }
 }
 
