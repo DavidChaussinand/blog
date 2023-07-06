@@ -28,6 +28,11 @@ function blogPostDelete(PDO $pdo, int $id) : void {
     $recipesStatementDeleteComment->bindValue(':id', $id,PDO::PARAM_INT);
     $recipesStatementDeleteComment->execute();
 
+    $requetCategories = file_get_contents("database/deleteCategory.sql");
+    $statementCategories = $pdo ->prepare($requetCategories);
+    $statementCategories->bindValue(':id', $id, PDO::PARAM_INT);
+    $statementCategories->execute();
+
     $sqlDeletePost = file_get_contents('database/deletePost.sql');
     $recipesStatementDeletePost = $pdo ->prepare($sqlDeletePost);
     $recipesStatementDeletePost->bindValue(':id', $id,PDO::PARAM_INT);
