@@ -22,9 +22,9 @@ $donnee=[
     'title' =>$_POST['title'] ?? "",
     'first_date' =>$_POST['first_date'] ?? "",
     'last_date' =>$_POST['last_date'] ?? "",
-    'Users_id' =>$_POST['priority'] ?? ""
+    'Users_id' =>$_POST['Users_id'] ?? ""
 ];
-var_dump($donnee);
+
 if (!empty ($_POST)) {
 
     $error = false;
