@@ -3,7 +3,6 @@
 
 function lastBlogPosts(PDO $pdo) :array
     {   
-
         $sql = file_get_contents('database/lastBlogPosts.sql'); // récupération du contenu de mon fichier lastBlogPosts.sql
         $recipesStatement = $pdo->prepare($sql);
         $recipesStatement->execute();
@@ -28,7 +27,6 @@ function blogPostById(PDO $pdo ,int $id) : array
         $recipesStatement->execute();
         $article = $recipesStatement->fetch();
         return $article;
-
     }
 
 function blogPostDelete(PDO $pdo, int $id) : void {
@@ -103,6 +101,12 @@ function blogPostUpdate(PDO $pdo, $id,$text, $priority, $title, $first_date, $la
 
 
 }
+
+//    <div class="form-example">
+//            <label for="text">le contenu de l'article: </label>
+/*            <input type="text" name="text" id="text" value="<?= $_POST['text'] ?? '' ?>">*/
+//    </div>
+
 
 
 

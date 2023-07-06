@@ -9,42 +9,10 @@ echo "voici la page de modification d'article";
 
 <form action="" method="post" >
     <div class="form-example">
-
         <input type="hidden" name="id" id="id" value="<?=$article['id'] ?>" required>
     </div>
+    <?php include 'ressources/views/layouts/templateForm.tpl.php';?>
 
-    <div class="form-example">
-        <label for="text">le contenu de l'article: </label>
-        <input type="text" name="text" id="text" value="<?=$article['text']?>" required>
-    </div>
-    <div class="form-example">
-        <label for="priority">le dégré d'importance de l'article: </label>
-        <input type="number" name="priority" id="priority" value="<?=$article['priority']?>" required>
-    </div>
-    <div class="form-example">
-        <label for="title">Titre de l'article </label>
-        <input type="text" name="title" id="title" value="<?=$article['title'] ?>" required>
-    </div>
-    <div class="form-example">
-        <label for="first_date">la date de début de la publication: </label>
-        <input type="datetime-local" name="first_date" id="first_date" value="<?=$article['first_date']?>"  required>
-    </div>
-    <div class="form-example">
-        <label for="last_date"> la date de fin de la publication: </label>
-        <input type="datetime-local" name="last_date" id="last_date" value="<?=$article['last_date']?>" required>
-    </div>
-    <div class="form-example">
-        <label for="Users_id">l'index de l'auteur: </label>
-        <select name="Users_id"" id="Users_id"" value="<?= $_POST['Users_id"'] ?? '' ?>">
-        <?php foreach ($authors as $author ) { ?>
-            <option value=" <?= $author['id']?>" selected ><?= $author['id']?> (<?= $author['user_name']?>) </option>
-        <?php } ?>
-        </select>
-    </div>
-
-    <div >
-        <button type="submit"  name="envoyer">Envoyer</button>
-    </div>
 </form>
 
 

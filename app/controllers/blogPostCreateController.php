@@ -16,26 +16,38 @@ $text = $mesInput['text'] ?? "" ;
 $title = $mesInput['title']?? "";
 
 
+$donnee=[
+    'priority' =>$_POST['priority'] ?? "",
+    'text' =>$_POST['text'] ?? "",
+    'title' =>$_POST['title'] ?? "",
+    'first_date' =>$_POST['first_date'] ?? "",
+    'last_date' =>$_POST['last_date'] ?? "",
+    'Users_id' =>$_POST['priority'] ?? ""
+];
+var_dump($donnee);
 if (!empty ($_POST)) {
 
     $error = false;
 
+    $priority = $donnee['priority'];
+    var_dump($priority);
 
-    $text = $_POST['text'];
+    $text = $donnee['text'];
     if (empty($text)) {
         $emptyText =" le contenu du text est vide , merci de le remplir";
         $error = true;
     }
-    if (strlen($text) > 150) {
+    elseif (strlen($text) > 150) {
         $emptyText = " le contenu de l'article est trop long, merci de ne pas dépasser 150 caractères";
         $error = true;
     }
+    elseif(strlen($text) < 5){
+        $emptyText = " le contenu de l'article est trop court, mettre plus de 5 caractères";
+        $error = true;
+    }
 
-    $priority = $_POST['priority'];
 
-
-
-    $title = $_POST['title'];
+    $title = $donnee['title'];
     if (empty($title)) {
         $emptyTitle =" le contenu du titre est vide , merci de le remplir";
         $error = true;
@@ -45,21 +57,20 @@ if (!empty ($_POST)) {
         $error = true;
     }
 
-
-    $first_date = $_POST['first_date'];
+    $first_date = $donnee['first_date'];
     if (empty($first_date)) {
         $emptyFirst_date =" mettre la date de création";
         $error = true;
     }
 
-    $last_date = $_POST['last_date'];
+    $last_date = $donnee['last_date'];
     if (empty($last_date)) {
         $emptyLast_date =" mettre la date de fin de la publication";
         $error = true;
     }
 
 
-    $users_id = $_POST['Users_id'];
+    $users_id = $donnee['Users_id'];
     if (empty($users_id)) {
         $emptyUsers_id =" l'id auteur n'est pas rempli";
         $error = true;

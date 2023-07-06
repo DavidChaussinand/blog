@@ -6,11 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="908ef73d-605b-46b1-9024-32ba0fd8b0c3" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/blogPostController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/blogPostController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/blogPostCreateController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/blogPostCreateController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/blogPostModifyController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/blogPostModifyController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/createAuthorController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/createAuthorController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/persistences/blogPostData.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/persistences/blogPostData.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ressources/views/blogPostModify.tpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/ressources/views/blogPostModify.tpl.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ressources/views/createPost.tpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/ressources/views/createPost.tpl.php" afterDir="false" />
     </list>
@@ -70,7 +69,7 @@
       <workItem from="1688452344476" duration="925000" />
       <workItem from="1688453270581" duration="22000000" />
       <workItem from="1688538930673" duration="25423000" />
-      <workItem from="1688624964582" duration="10452000" />
+      <workItem from="1688624964582" duration="23172000" />
     </task>
     <servers />
   </component>

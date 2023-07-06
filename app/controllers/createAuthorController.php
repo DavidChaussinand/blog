@@ -4,7 +4,6 @@ require 'app/persistences/blogPostData.php';
 
 if (!empty ($_POST)){
 
-    var_dump($_POST);
     $name = $_POST['name'];
     $nickname = $_POST['nickname'];
     $username = $_POST['user_name'];
